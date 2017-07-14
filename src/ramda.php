@@ -68,7 +68,9 @@ namespace Baguette\Ramda\util
     {
         switch (count($args)) {
         case 0:
-            return $f;
+            return function ($a = null) use ($f) {
+                return curry1($f, func_get_args());
+            };
         default:
             return $f($args[0]);
         }
@@ -78,7 +80,9 @@ namespace Baguette\Ramda\util
     {
         switch (count($args)) {
         case 0:
-            return $f;
+            return function ($a = null, $b = null) use ($f) {
+                return curry2($f, func_get_args());
+            };
         case 1:
             return function ($a) use ($f) {
                 return $f($args[0], $a);
