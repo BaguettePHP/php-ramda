@@ -1,0 +1,11 @@
+{
+    "name": "baguette/ramda",
+    "description": "A practical functional library for PHP programmers.",
+    "license": "Apache-2.0",
+    "autoload": {
+        "files": ["src/ramda.php"]
+    },
+    "require-dev": {
+        "php5friends/phpunit48": "^4.8"
+    }
+}
