@@ -43,6 +43,8 @@ namespace Baguette\Ramda
 
 namespace Baguette\Ramda\util
 {
+    use Baguette\Ramda\NarityFunc;
+
     /**
      * Returns an indication of the number of arguments accepted by a callable.
      *
@@ -51,6 +53,10 @@ namespace Baguette\Ramda\util
      */
     function arity (callable $callback)
     {
+        if ($callback instanceof NarityFunc) {
+            return $callback->arity;
+        }
+
         if (is_array($callback) ||
             (is_string($callback) && strpos($callback, '::') !== false)) {
             list($class, $method) = is_string($callback) ? explode('::', $callback) : $callback;
