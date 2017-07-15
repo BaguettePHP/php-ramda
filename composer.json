@@ -3,7 +3,10 @@
     "description": "A practical functional library for PHP programmers.",
     "license": "Apache-2.0",
     "autoload": {
-        "files": ["src/ramda.php"]
+        "files": ["src/ramda.php"],
+        "psr-4": {
+            "Baguette\\Ramda\\": "src/"
+        }
     },
     "require-dev": {
         "php5friends/phpunit48": "^4.8"
